@@ -1,0 +1,93 @@
+{
+  "name": "SentMessage",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "flag_post",
+        "flag_reply",
+        "flag_message",
+        "contact",
+        "feedback",
+        "outreach"
+      ],
+      "default": "contact"
+    },
+    "recipient": {
+      "type": "string"
+    },
+    "recipient_type": {
+      "type": "string",
+      "enum": [
+        "organization",
+        "admin"
+      ],
+      "default": "admin"
+    },
+    "related_id": {
+      "type": "string"
+    },
+    "related_opportunity_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sent",
+        "read",
+        "hidden"
+      ],
+      "default": "sent"
+    }
+  },
+  "required": [
+    "user_id",
+    "subject",
+    "body",
+    "message_type"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "data.user_id": "{{user.id}}"
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
