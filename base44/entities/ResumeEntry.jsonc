@@ -1,0 +1,41 @@
+{
+  "name": "ResumeEntry",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "opportunity_title": {
+      "type": "string"
+    },
+    "organization_name": {
+      "type": "string"
+    },
+    "generated_bullet": {
+      "type": "string"
+    },
+    "edited_bullet": {
+      "type": "string"
+    },
+    "activity_description": {
+      "type": "string"
+    },
+    "skills_gained": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hours": {
+      "type": "number"
+    },
+    "date_range": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "opportunity_title",
+    "organization_name"
+  ]
+}
