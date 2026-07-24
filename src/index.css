@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 220 20% 20%;
+    --card: 40 30% 98%;
+    --card-foreground: 220 20% 20%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 220 20% 20%;
+    --primary: 220 50% 20%;
+    --primary-foreground: 40 30% 98%;
+    --secondary: 150 20% 60%;
+    --secondary-foreground: 220 20% 15%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 42 50% 55%;
+    --accent-foreground: 220 20% 15%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 220 50% 20%;
+    --chart-1: 150 30% 45%;
+    --chart-2: 220 50% 20%;
+    --chart-3: 42 50% 55%;
+    --chart-4: 150 20% 60%;
+    --chart-5: 40 33% 70%;
+    --radius: 1rem;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 220 50% 20%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 150 20% 60%;
+    --sidebar-primary-foreground: 220 20% 15%;
+    --sidebar-accent: 220 40% 28%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 220 40% 30%;
+    --sidebar-ring: 150 20% 60%;
+    --emerald: 152 60% 42%;
+    --amber: 38 92% 50%;
+    --sage: 150 20% 60%;
+    --gold: 42 50% 55%;
+    --navy: 220 50% 20%;
+    --ivory: 40 33% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-emerald-custom {
+    color: hsl(var(--emerald));
+  }
+  .bg-emerald-custom {
+    background-color: hsl(var(--emerald));
+  }
+  .text-amber-custom {
+    color: hsl(var(--amber));
+  }
+  .bg-amber-custom {
+    background-color: hsl(var(--amber));
+  }
+  .text-sage {
+    color: hsl(var(--sage));
+  }
+  .bg-sage {
+    background-color: hsl(var(--sage));
+  }
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+}
