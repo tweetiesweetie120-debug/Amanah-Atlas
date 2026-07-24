@@ -1,0 +1,61 @@
+{
+  "name": "AdvicePost",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string",
+      "enum": [
+        "School stress",
+        "Friendships",
+        "Identity",
+        "Balancing deen",
+        "Prayer at school",
+        "Family expectations",
+        "Bullying",
+        "Peer pressure",
+        "College stress",
+        "Motivation"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "upvotes": {
+      "type": "number",
+      "default": 0
+    },
+    "reply_count": {
+      "type": "number",
+      "default": 0
+    },
+    "locked": {
+      "type": "boolean",
+      "default": false
+    },
+    "flagged": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "hidden",
+        "removed"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "user_id",
+    "topic",
+    "title",
+    "body"
+  ]
+}
