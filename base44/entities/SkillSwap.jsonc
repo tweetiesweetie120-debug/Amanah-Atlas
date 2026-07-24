@@ -1,0 +1,36 @@
+{
+  "name": "SkillSwap",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "skill_offered": {
+      "type": "string"
+    },
+    "skill_wanted": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "accepted",
+        "completed",
+        "closed"
+      ],
+      "default": "open"
+    },
+    "partner_user_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "skill_offered",
+    "skill_wanted"
+  ]
+}
