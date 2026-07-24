@@ -1,0 +1,59 @@
+{
+  "name": "VolunteerLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "opportunity_id": {
+      "type": "string"
+    },
+    "opportunity_title": {
+      "type": "string"
+    },
+    "organization_name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "hours": {
+      "type": "number"
+    },
+    "task_description": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "proof_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "verified_by": {
+      "type": "string"
+    },
+    "verified_at": {
+      "type": "string"
+    },
+    "verification_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "opportunity_title",
+    "organization_name",
+    "date",
+    "hours"
+  ]
+}
