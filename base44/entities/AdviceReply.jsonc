@@ -1,0 +1,37 @@
+{
+  "name": "AdviceReply",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "post_id": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "upvotes": {
+      "type": "number",
+      "default": 0
+    },
+    "flagged": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "hidden",
+        "removed"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "user_id",
+    "post_id",
+    "body"
+  ]
+}
