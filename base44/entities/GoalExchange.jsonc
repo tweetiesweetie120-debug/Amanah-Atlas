@@ -1,0 +1,55 @@
+{
+  "name": "GoalExchange",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Academic",
+        "Service",
+        "Personal growth",
+        "College prep",
+        "Habits",
+        "Spiritual"
+      ],
+      "default": "Academic"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "seeking",
+        "matched",
+        "paused",
+        "completed"
+      ],
+      "default": "seeking"
+    },
+    "matched_goal_id": {
+      "type": "string"
+    },
+    "matched_user_id": {
+      "type": "string"
+    },
+    "last_checkin_note": {
+      "type": "string"
+    },
+    "checkin_count": {
+      "type": "number",
+      "default": 0
+    },
+    "last_checkin_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "user_id",
+    "goal"
+  ]
+}
