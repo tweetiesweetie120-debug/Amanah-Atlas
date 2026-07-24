@@ -1,0 +1,32 @@
+{
+  "name": "SkillSwapRequest",
+  "type": "object",
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "listing_user_id": {
+      "type": "string"
+    },
+    "requester_id": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "declined"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "listing_id",
+    "listing_user_id",
+    "requester_id"
+  ]
+}
