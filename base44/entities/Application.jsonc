@@ -1,0 +1,36 @@
+{
+  "name": "Application",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "opportunity_id": {
+      "type": "string"
+    },
+    "opportunity_title": {
+      "type": "string"
+    },
+    "organization_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "interested",
+        "applied",
+        "accepted",
+        "rejected",
+        "withdrawn"
+      ],
+      "default": "interested"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "opportunity_id"
+  ]
+}
