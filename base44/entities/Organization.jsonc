@@ -1,0 +1,43 @@
+{
+  "name": "Organization",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "MD"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false
+    },
+    "logo_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "name",
+    "contact_email"
+  ]
+}
