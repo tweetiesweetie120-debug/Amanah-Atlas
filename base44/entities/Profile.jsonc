@@ -1,0 +1,184 @@
+{
+  "name": "Profile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "student",
+        "organization",
+        "admin"
+      ],
+      "default": "student"
+    },
+    "education_status": {
+      "type": "string",
+      "enum": [
+        "high_school",
+        "college",
+        "university",
+        "other"
+      ],
+      "default": "high_school"
+    },
+    "grade_level": {
+      "type": "string"
+    },
+    "school": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "travel_radius": {
+      "type": "number",
+      "default": 10
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "career_interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "field_of_study": {
+      "type": "string"
+    },
+    "internship_interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "availability_days": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "availability_times": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remote_only": {
+      "type": "boolean",
+      "default": false
+    },
+    "ssl_only": {
+      "type": "boolean",
+      "default": false
+    },
+    "safety_preferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "other_details": {
+      "type": "string"
+    },
+    "allow_messages": {
+      "type": "boolean",
+      "default": false
+    },
+    "discoverable": {
+      "type": "boolean",
+      "default": false
+    },
+    "onboarding_complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "total_verified_hours": {
+      "type": "number",
+      "default": 0
+    },
+    "total_pending_hours": {
+      "type": "number",
+      "default": 0
+    },
+    "total_logged_hours": {
+      "type": "number",
+      "default": 0
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "user_id",
+    "role"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "data.discoverable": true
+        }
+      ]
+    },
+    "create": {
+      "data.user_id": "{{user.id}}"
+    },
+    "update": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.user_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
