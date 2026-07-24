@@ -1,0 +1,198 @@
+{
+  "name": "Opportunity",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "organization_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "source_name": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "signup_url": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "MD"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "remote_allowed": {
+      "type": "boolean",
+      "default": false
+    },
+    "in_person_allowed": {
+      "type": "boolean",
+      "default": true
+    },
+    "women_led": {
+      "type": "boolean",
+      "default": false
+    },
+    "mosque_based": {
+      "type": "boolean",
+      "default": false
+    },
+    "youth_friendly": {
+      "type": "boolean",
+      "default": true
+    },
+    "family_safe": {
+      "type": "boolean",
+      "default": true
+    },
+    "ssl_approved": {
+      "type": "boolean",
+      "default": false
+    },
+    "transportation_needed": {
+      "type": "boolean",
+      "default": true
+    },
+    "age_min": {
+      "type": "number",
+      "default": 14
+    },
+    "age_max": {
+      "type": "number",
+      "default": 18
+    },
+    "skill_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interest_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "career_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "field_of_study_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "opportunity_type": {
+      "type": "string",
+      "enum": [
+        "volunteer",
+        "internship",
+        "ssl",
+        "job",
+        "other"
+      ],
+      "default": "volunteer"
+    },
+    "education_levels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "availability_days": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "availability_times": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hours_needed": {
+      "type": "number"
+    },
+    "application_open": {
+      "type": "string",
+      "format": "date"
+    },
+    "application_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "rolling_ongoing": {
+      "type": "boolean",
+      "default": false
+    },
+    "paid_or_unpaid": {
+      "type": "string",
+      "enum": [
+        "paid",
+        "unpaid",
+        "stipend",
+        "unknown"
+      ]
+    },
+    "eligibility": {
+      "type": "string"
+    },
+    "last_synced_at": {
+      "type": "string"
+    },
+    "stale_flag": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "stale"
+      ],
+      "default": "active"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "contact_phone": {
+      "type": "string"
+    },
+    "org_website": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "organization_name"
+  ]
+}
