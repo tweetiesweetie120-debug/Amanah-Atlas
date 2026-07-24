@@ -1,0 +1,76 @@
+{
+  "name": "Conversation",
+  "type": "object",
+  "properties": {
+    "participant_a_id": {
+      "type": "string"
+    },
+    "participant_b_id": {
+      "type": "string"
+    },
+    "last_message_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "participant_a_id",
+    "participant_b_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.participant_a_id": "{{user.id}}"
+        },
+        {
+          "data.participant_b_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "data.participant_a_id": "{{user.id}}"
+        },
+        {
+          "data.participant_b_id": "{{user.id}}"
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.participant_a_id": "{{user.id}}"
+        },
+        {
+          "data.participant_b_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.participant_a_id": "{{user.id}}"
+        },
+        {
+          "data.participant_b_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
